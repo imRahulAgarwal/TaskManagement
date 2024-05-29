@@ -1,0 +1,25 @@
+{
+    "name": "task-management-server",
+    "version": "1.0.0",
+    "description": "Task management server",
+    "main": "server.js",
+    "type": "module",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node server.js"
+    },
+    "author": "Rahul Agarwal V",
+    "license": "ISC",
+    "dependencies": {
+        "bcrypt": "^5.1.1",
+        "body-parser": "^1.20.2",
+        "cors": "^2.8.5",
+        "dotenv": "^16.4.5",
+        "express": "^4.19.2",
+        "express-rate-limit": "^7.2.0",
+        "joi": "^17.13.1",
+        "jsonwebtoken": "^9.0.2",
+        "mongoose": "^8.4.0",
+        "multer": "^1.4.5-lts.1"
+    }
+}
