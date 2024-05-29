@@ -59,4 +59,5 @@ jobs:
                   echo "${{ secrets.CLIENT_ENV }}" > .env
                   npm run build
                   [ ! -d "/var/www/TaskManagement" ] && mkdir /var/www/TaskManagement
+                  rm -rf /var/www/TaskManagement/*
                   mv dist/* /var/www/TaskManagement/
