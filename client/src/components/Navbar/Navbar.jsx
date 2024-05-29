@@ -49,7 +49,11 @@ const Navbar = ({ onClick, show }) => {
                 <li className="relative" ref={profileMenu}>
                     <button className="px-3 py-1 flex text-sm rounded-full focus:outline-none" onClick={() => setShowDropdown(true)}>
                         <div className="relative">
-                            <img className="h-10 w-10 rounded-full border border-gray-700 bg-gray-700" src="arin.png" alt="avatar" />
+                            {user?.image ? (
+                                <img className="h-10 w-10 rounded-full border border-gray-700 bg-gray-700" src={user?.image} alt={user?.name} />
+                            ) : (
+                                <div className="rounded-full w-10 h-10 bg-gray-200 border-solid border-white border-2" />
+                            )}
                         </div>
                         <span className="hidden md:block ms-1 self-center">{user?.name}</span>
                     </button>
@@ -57,8 +61,12 @@ const Navbar = ({ onClick, show }) => {
                         <ul className="origin-top-right absolute end-0 rounded top-full z-50 py-0.5 text-start min-w-[13rem] bg-white shadow-md">
                             <li className="relative">
                                 <div className="flex flex-wrap flex-row -mx-4 px-3 py-4 items-center">
-                                    <div className="flex-shrink max-w-full px-4 w-1/3">
-                                        <img src="arin.png" className="h-10 w-10 rounded-full" alt="Ari Budin" />
+                                    <div className="flex-shrink max-w-full px-4 w-1/3 flex justify-center relative">
+                                        {user?.image ? (
+                                            <img src={user?.image} className="h-10 w-10 rounded-full" alt={user?.name} />
+                                        ) : (
+                                            <div className="rounded-full w-10 h-10 bg-gray-200 border-solid border-white border-2" />
+                                        )}
                                     </div>
                                     <div className="flex-shrink max-w-full px-4 w-2/3 ps-1">
                                         <p className="font-bold text-gray-800">{user?.name}</p>
